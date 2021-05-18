@@ -1,0 +1,6 @@
+spring.application.name: saga-application
+
+police.uri: "https://data.police.uk/api"
+
+      
+logging.level.feign.Logger: DEBUG
