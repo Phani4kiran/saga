@@ -28,10 +28,15 @@ public class CrimeController {
         return ResponseEntity.status(NOT_FOUND).body(CrimeCategoriesResponse.builder().build());
     }
 
-    @GetMapping(path="/crimes")
+   @GetMapping(path="/crimes")
     public ResponseEntity<List<CrimesDetailsResponse>> getCrimesByPostCodeAndDate(@RequestParam String postcode,@RequestParam String date){
-        return ResponseEntity.status(NOT_FOUND).body(crimeService.getCrimesByPostCodeAndDate(postcode));
+       List<CrimesDetailsResponse> crimesDetailsResponseList = crimeService.getCrimesByPostCodeAndDate(postcode)
+        if(crimesDetailsResponseList.size()>0){
+            return ResponseEntity.status(OK).body(crimesDetailsResponseList);
 
-    }
+        }
+       return ResponseEntity.status(NOT_FOUND).build());
+
+   }
 
 }
