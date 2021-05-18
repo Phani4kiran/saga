@@ -17,4 +17,6 @@ public interface PoliceFeignClient {
     @GetMapping(value = "/crime-categories", produces = MediaType.APPLICATION_JSON_VALUE)
     List<PoliceCrimeCategories> getPoliceCrimeCategoriesList(@RequestParam(required = false, name="date") String date);
 
+    @GetMapping(value = "/crimes-at-location",produces = MediaType.APPLICATION_JSON_VALUE)
+    List<CrimesByLocationResponse> getCrimesAtLocation(@RequestParam String longitude, @RequestParam String latitude,@RequestParam String date);
 }

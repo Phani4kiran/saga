@@ -6,13 +6,14 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.List;
-
 @Data
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class PostCodesFeignResponse {
-    int status;
-    Location result;
+public class CrimesByLocationResponse {
+    String category;
+    Location location;
+    OutComeStatus outcome_status;
+    String month;
+
 }
