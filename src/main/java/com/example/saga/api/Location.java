@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Location {
-    String latidute;
+    String latitude;
     String longitude;
     String postCode;
 }

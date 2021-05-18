@@ -14,5 +14,5 @@ import java.util.List;
 @AllArgsConstructor
 public class PostCodesFeignResponse {
     String status;
-    List<Location> result;
+    Location result;
 }

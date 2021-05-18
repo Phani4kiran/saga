@@ -1,6 +1,7 @@
 package com.example.saga.service;
 
 import com.example.saga.api.CrimesDetailsResponse;
+import com.example.saga.api.Location;
 import com.example.saga.feignclient.PoliceCrimeCategories;
 import com.example.saga.feignclient.PoliceFeignClient;
 import com.example.saga.feignclient.PostCodesFeignClient;
@@ -25,7 +26,10 @@ public class CrimeService {
     }
 
     public List<CrimesDetailsResponse> getCrimesByPostCodeAndDate(String postCode, String date) {
-        final PostCodesFeignResponse locationByPostcodes = postCodesFeignClient.getLocationByPostcodes(postCode);
+        final PostCodesFeignResponse locationByPostcodes = postCodesFeignClient.getLocationByPostCode(postCode);//
+        // if status  is ok then take result and build CrimesDetailsResponse .
+        final Location result = locationByPostcodes.getResult();
+
         System.out.println("HareKrishna "+locationByPostcodes.getStatus());
         return null;
 
