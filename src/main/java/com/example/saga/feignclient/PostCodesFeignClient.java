@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 @FeignClient(
         value = "Postcode-Feign-Client",
-        url = "https://data.police.uk/api"
+        url = "https://api.postcodes.io"
 )
 public interface PostCodesFeignClient {
 
