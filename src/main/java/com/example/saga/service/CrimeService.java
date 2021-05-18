@@ -24,7 +24,7 @@ public class CrimeService {
 
     }
 
-    public List<CrimesDetailsResponse> getCrimesByPostCodeAndDate(String postCode) {
+    public List<CrimesDetailsResponse> getCrimesByPostCodeAndDate(String postCode, String date) {
         final PostCodesFeignResponse locationByPostcodes = postCodesFeignClient.getLocationByPostcodes(postCode);
         System.out.println("HareKrishna "+locationByPostcodes.getStatus());
         return null;

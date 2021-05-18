@@ -30,12 +30,12 @@ public class CrimeController {
 
    @GetMapping(path="/crimes")
     public ResponseEntity<List<CrimesDetailsResponse>> getCrimesByPostCodeAndDate(@RequestParam String postcode,@RequestParam String date){
-       List<CrimesDetailsResponse> crimesDetailsResponseList = crimeService.getCrimesByPostCodeAndDate(postcode)
+       List<CrimesDetailsResponse> crimesDetailsResponseList = crimeService.getCrimesByPostCodeAndDate(postcode,date);
         if(crimesDetailsResponseList.size()>0){
             return ResponseEntity.status(OK).body(crimesDetailsResponseList);
 
         }
-       return ResponseEntity.status(NOT_FOUND).build());
+       return ResponseEntity.status(NOT_FOUND).build();
 
    }
 
